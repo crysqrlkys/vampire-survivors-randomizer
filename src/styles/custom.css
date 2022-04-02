@@ -8,3 +8,15 @@
     background-color: #891216;
     color: #ffc500;
 }
+
+.bc-container {
+    background-color: #140100;
+    border: 3px solid #595358;
+    height: 70vh;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+}
