@@ -30,7 +30,7 @@ const BuildCard = () => {
     }
 
     return (
-        <Container>
+        <Container className="bc-container">
             <Row>
                 <Col>
                     <Character currentCharacter={currentCharacter} setCharacter={setCharacter}/>
@@ -44,8 +44,7 @@ const BuildCard = () => {
                     </Row>
                 </Col>
             </Row>
-            {/* justify-content-center" */}
-            <Row className='p-5'>
+            <Row className='pt-5'>
                 <Col className='text-center'>
                     <Button variant="vs" size='lg' onClick={handleRandomize}>Randomize</Button>
                 </Col>
