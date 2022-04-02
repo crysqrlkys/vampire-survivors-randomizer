@@ -3,8 +3,7 @@ import React, {useState} from "react";
 import '../styles/images.css';
 import { characters } from "../data/constants";
 
-const Character = () => {    
-    const [currentCharacter, setCurrentCharacter] = useState(characters[0]);
+const Character = ({currentCharacter, setCharacter}) => {    
     const [show, setShow] = useState(false);
     
     const numberOfCharacters = characters.length;
@@ -13,17 +12,16 @@ const Character = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const setCharacter = (character) => {
-        setCurrentCharacter(character);
-        setShow(false);
-    } 
+    const handleSelect = (character) => {
+        setCharacter(character);
+        handleClose();
+    }
 
     const populateRow = (start) => {
             const charactersInRow = [...characters];
-            console.log(charactersInRow);
             return charactersInRow.splice(start, 4).map((character, i) => (
                 <Col md={3} key={i}>
-                    <Image className="character-image" onClick={() => setCharacter(character)} src={`${character['url']}`} />
+                    <Image className="character-image" onClick={() => handleSelect(character)} src={`${character.url}`} />
                 </Col>
             )
         );
@@ -31,7 +29,7 @@ const Character = () => {
 
     return (
         <div>
-            <Image src={currentCharacter['url']} onClick={handleShow} className="current-character-image" alt="character"/>
+            <Image src={currentCharacter.url} onClick={handleShow} className="current-character-image" alt="character"/>
             <Modal size='lg' show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Select Character</Modal.Title>
