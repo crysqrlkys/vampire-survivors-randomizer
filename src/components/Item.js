@@ -1,23 +1,26 @@
 import { useState } from "react";
 import { Col, Row, Container, Form, Image, Modal } from "react-bootstrap";
-import { weapons } from "../data/constants";
+import useLocalStorage from "use-local-storage";
 
-const Item = ({itemsListName, currentItem}) => {
-    const [show, setShow] = useState(false)
+const Item = ({itemId, itemsListName, items}) => {
+    const [show, setShow] = useState(false);
     const [q, setQ] = useState('');
+    const [currentItem, setCurrentItem] = useLocalStorage(`${itemId}-currentItem`, items[0]);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
+    const setItem = (item) => {
+        setCurrentItem(item);
+        handleClose();
+    };
+    
     const handleSearch = (event) => setQ(event.target.value);
 
-    currentItem.url = `${process.env.PUBLIC_URL}/weapons/Whip.png`;
-    currentItem.name = 'Whip';
-
-    const body = weapons.map((weapon, i) => (
-            <Col key={i} xs={6}>
-                <Image className="list-item-image me-1" src={weapon.url}/> 
-                {weapon.name}
+    const body = items.map((item, i) => (
+            <Col className='vs-item' key={i} xs={6} onClick={() => setItem(item)}>
+                <Image className="list-item-image me-1" src={item.url}/> 
+                {item.name}
             </Col>
         )
     );
@@ -31,11 +34,11 @@ const Item = ({itemsListName, currentItem}) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Container>
-                        <Row>
-                            <Form.Control className='' type='text' onChange={handleSearch} placeholder={`Type to search ${itemsListName}`}/>
+                        <Row className="mb-3">
+                            <Form.Control className='dark' type='text' onChange={handleSearch} placeholder={`Type to search ${itemsListName}`}/>
                         </Row>
                         <Row>
-                            {body.filter((item) => !q || item.props.children[1].toLowerCase().startsWith(q.toLowerCase()))}
+                            {body.filter((item) => !q || item.props.children[1].toLowerCase().includes(q.toLowerCase()))}
                         </Row>
                     </Container>
                 </Modal.Body>

@@ -10,7 +10,7 @@ Build randomizer for vampire survivors.
 - [ ] Weapons.
 - [ ] Accessories (possibly same component).
 - [ ] Preselected weapons for characters.
-- [ ] Settings (lock selection, combinations, include secret characters).
+- [ ] Settings (lock selection, combinations [must disable accessories or drop weapon], include secret characters).
 - [ ] Default values.
 ### Style
 - [x] Basic css.
