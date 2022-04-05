@@ -1,11 +1,11 @@
 import { Row } from "react-bootstrap";
-import { accessories } from "../data/constants";
+import { useSelector } from "react-redux";
 import Item from "./Item";
 
 const AccessoryList = () => {
-    const items = [...accessories];
+    const accessories = useSelector((state) => state.app.accessoryPool);
     const accessoryComponents = [...Array(6)].map((_, i) => (
-            <Item key={i} itemId={`a-${i}`} itemsListName={'accessory'} items={items} />
+            <Item key={i} itemId={`a-${i}`} itemsListName={'accessory'} items={accessories} />
         )
     );
     return (

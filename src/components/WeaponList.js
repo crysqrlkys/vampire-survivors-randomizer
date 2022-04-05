@@ -1,11 +1,11 @@
 import { Row } from "react-bootstrap";
-import { evolutions, unions, weapons } from "../data/constants";
+import { useSelector } from "react-redux";
 import Item from "./Item";
 
 const WeaponList = () => {
-    const items = [...weapons, ...evolutions, ...unions] 
+    const weapons = useSelector((state) => state.app.weaponPool);
     const weaponComponents = [...Array(6)].map((_, i) => (
-            <Item key={i} itemId={`w-${i}`} itemsListName={'weapon'} items={items} />
+            <Item key={i} itemId={`w-${i}`} itemsListName={'weapon'} items={weapons} />
         )
     );
     return (
