@@ -291,3 +291,76 @@ const unionsDictionary = {
 };
 
 export const unions = Object.values(unionsDictionary);
+
+const accessoriesDictionary = {
+    0: {
+        'name': 'Random',
+        'url': `${accessoryImagesUrl}/Spinach.png`,
+    },
+    1: {
+        'name': 'Spinach',
+        'url': `${accessoryImagesUrl}/Spinach.png`,
+    },
+    2: {
+        'name': 'Armor',
+        'url': `${accessoryImagesUrl}/Armor.png`,
+    },
+    3: {
+        'name': 'Hollow Heart',
+        'url': `${accessoryImagesUrl}/HollowHeart.png`,
+    },
+    4: {
+        'name': 'Pummarola',
+        'url': `${accessoryImagesUrl}/Pummarola.png`,
+    },
+    5: {
+        'name': 'Empty Tome',
+        'url': `${accessoryImagesUrl}/EmptyTome.png`,
+    },
+    6: {
+        'name': 'Candelabrador',
+        'url': `${accessoryImagesUrl}/Candelabrador.png`,
+    },
+    7: {
+        'name': 'Bracer',
+        'url': `${accessoryImagesUrl}/Bracer.png`,
+    },
+    8: {
+        'name': 'Spellbinder',
+        'url': `${accessoryImagesUrl}/Spellbinder.png`,
+    },
+    9: {
+        'name': 'Duplicator',
+        'url': `${accessoryImagesUrl}/Duplicator.png`,
+    },
+    10: {
+        'name': 'Wings',
+        'url': `${accessoryImagesUrl}/Wings.png`,
+    },
+    11: {
+        'name': 'Attractorb',
+        'url': `${accessoryImagesUrl}/Attractorb.png`,
+    },
+    12: {
+        'name': 'Clover',
+        'url': `${accessoryImagesUrl}/Clover.png`,
+    },
+    13: {
+        'name': 'Crown',
+        'url': `${accessoryImagesUrl}/Crown.png`,
+    },
+    14: {
+        'name': 'Stone Mask',
+        'url': `${accessoryImagesUrl}/StoneMask.png`,
+    },
+    15: {
+        'name': 'Tiragisú',
+        'url': `${accessoryImagesUrl}/Tiragisu.png`,
+    },
+    16: {
+        'name': 'Skull O\'Maniac',
+        'url': `${accessoryImagesUrl}/SkullOManiac.png`,
+    },
+};
+
+export const accessories = Object.values(accessoriesDictionary);

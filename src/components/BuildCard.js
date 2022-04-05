@@ -4,6 +4,7 @@ import { characters } from "../data/constants";
 import Character from "./Character";
 import '../styles/custom.css'
 import WeaponList from "./WeaponList";
+import AccessoryList from "./AccessoryList";
 
 const BuildCard = () => {
     const [currentCharacter, setCurrentCharacter] = useLocalStorage("currentCharacter", characters[0]);
@@ -35,9 +36,7 @@ const BuildCard = () => {
                 </Col>
                 <Col className="p-0 justify-content-center">
                     <WeaponList />
-                    <Row className='text-center justify=content-center'>
-                        <div>ACCESSORIES PLACEHOLDER</div>
-                    </Row>
+                    <AccessoryList />
                 </Col>
             </Row>
             <Row className='m-5'>
