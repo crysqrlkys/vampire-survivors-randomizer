@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { Col, Row, Container, Form, Image, Modal } from "react-bootstrap";
-import useLocalStorage from "use-local-storage";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentAccessories, setCurrentWeapons } from "../reducers";
 
 const Item = ({itemId, itemsListName, items}) => {
     const [show, setShow] = useState(false);
     const [q, setQ] = useState('');
-    const [currentItem, setCurrentItem] = useLocalStorage(`${itemId}-currentItem`, items[0]);
+
+    const isWeapon = itemId.startsWith('w');
+    const currentItem = useSelector((state) => isWeapon ? state.app.currentWeapons[itemId] : state.app.currentAccessories[itemId]);
+    const setCurrentItem = isWeapon ? setCurrentWeapons : setCurrentAccessories;
+
+    const dispatch = useDispatch();
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     const setItem = (item) => {
-        setCurrentItem(item);
+        dispatch(setCurrentItem({'id': itemId, 'value': item}));
         handleClose();
     };
     

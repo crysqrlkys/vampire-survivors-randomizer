@@ -83,12 +83,12 @@ export const characters = [
     },
 ];
 
+export const defaultItem =     {
+    'name': 'Default',
+    'url': `${process.env.PUBLIC_URL}/Default.png`
+}
+
 const weaponsDictionary = {
-    0: {
-        'name': 'Random',
-        'url': `${weaponImagesUrl}/Whip.png`,
-        'combinationItem': {},
-    },
     1: {
         'name': 'Whip',
         'url': `${weaponImagesUrl}/Whip.png`,
@@ -293,10 +293,6 @@ const unionsDictionary = {
 export const unions = Object.values(unionsDictionary);
 
 const accessoriesDictionary = {
-    0: {
-        'name': 'Random',
-        'url': `${accessoryImagesUrl}/Spinach.png`,
-    },
     1: {
         'name': 'Spinach',
         'url': `${accessoryImagesUrl}/Spinach.png`,

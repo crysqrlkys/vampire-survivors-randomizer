@@ -1,20 +1,26 @@
 import { Image, Modal, Container, Row, Col } from "react-bootstrap";
 import React, {useState} from "react";
 import '../styles/images.css';
-import { characters } from "../data/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { setCharacter } from "../reducers";
 
-const Character = ({currentCharacter, setCharacter}) => {    
+const Character = () => {    
     const [show, setShow] = useState(false);
+
+    const dispatch = useDispatch();
+    const currentCharacter = useSelector((state)=> state.app.currentCharacter);
+    const characters = useSelector((state) => state.app.characterPool)
     
     const numberOfCharacters = characters.length;
     const cols = [...Array(numberOfCharacters).keys()].filter(elem => elem % 4 === 0);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const handleSelect = (character) => {
-        setCharacter(character);
+        dispatch(setCharacter(character));
         handleClose();
     }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const populateRow = (start) => {
             const charactersInRow = [...characters];

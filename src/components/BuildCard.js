@@ -1,22 +1,22 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import useLocalStorage from "use-local-storage";
 import { characters } from "../data/constants";
 import Character from "./Character";
 import '../styles/custom.css'
 import WeaponList from "./WeaponList";
 import AccessoryList from "./AccessoryList";
+import { useDispatch } from "react-redux";
+import { setCharacter } from "../reducers";
 
 const BuildCard = () => {
-    const [currentCharacter, setCurrentCharacter] = useLocalStorage("currentCharacter", characters[0]);
-    
-    const setCharacter = (character) => {
-        localStorage.setItem("currentCharacter", JSON.stringify(character));
-        setCurrentCharacter(character);
+    const dispatch = useDispatch();
+
+    const setCurrentCharacter = (character) => {
+        dispatch(setCharacter(character));
     }
 
     const handleClear = () => {
-        setCharacter(characters[0]);
-        localStorage.clear();
+        setCurrentCharacter(characters[0]);
+        sessionStorage.clear();
     }
 
     const generateRandomNumber = (min, max) => {
@@ -24,15 +24,16 @@ const BuildCard = () => {
     }
 
     const handleRandomize = () => {
+        // TODO: prevent from getting the same number and exclude defaults
         const characterNumber = generateRandomNumber(1, characters.length);
-        setCharacter(characters[characterNumber]);
+        setCurrentCharacter(characters[characterNumber]);
     }
 
     return (
         <Container className="bc-container">
             <Row className="m-5">
                 <Col className="justify-content-center">
-                    <Character currentCharacter={currentCharacter} setCharacter={setCharacter}/>
+                    <Character/>
                 </Col>
                 <Col className="p-0 justify-content-center">
                     <WeaponList />

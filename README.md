@@ -12,7 +12,7 @@ Build randomizer for vampire survivors.
 - [ ] Preselected weapons for characters.
 - [ ] Validations.
 - [ ] Settings (lock selection, combinations [must disable accessories or drop weapon], include secret characters).
-- [ ] Default values.
+- [x] Default values.
 ### Style
 - [x] Basic css.
 - [x] Background image.
@@ -26,7 +26,7 @@ Build randomizer for vampire survivors.
 - [ ] License.
 - [ ] Deploy.
 ### To improve
-- [ ] State store.
+- [x] State store.
 - [ ] Complex random.
 - [ ] Better CSS.
 - [ ] Images (icons, background image).
