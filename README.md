@@ -7,9 +7,10 @@ Build randomizer for vampire survivors.
 ### Logic
 - [x] Character and character select.
 - [x] Basic `Randomize` button.
-- [ ] Weapons.
-- [ ] Accessories (possibly same component).
+- [x] Weapons.
+- [x] Accessories (possibly same component).
 - [ ] Preselected weapons for characters.
+- [ ] Validations.
 - [ ] Settings (lock selection, combinations [must disable accessories or drop weapon], include secret characters).
 - [ ] Default values.
 ### Style
@@ -18,14 +19,16 @@ Build randomizer for vampire survivors.
 - [ ] Labels for character/weapons/accessories.
 - [ ] Footer.
 - [ ] Tooltips.
-- [ ] Css for selects (modal, dropdown).
-- [ ] Css for inputs (buttons, checboxes).
+- [x] Css for selects (modal, dropdown).
+- [x] Css for inputs (buttons, checboxes).
 ### Other
 - [ ] Mobile responsivness.
 - [ ] License.
 - [ ] Deploy.
 ### To improve
 - [ ] State store.
+- [ ] Complex random.
+- [ ] Better CSS.
 - [ ] Images (icons, background image).
 - [ ] README.
 
