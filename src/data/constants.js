@@ -2,7 +2,6 @@ export const characterImagesUrl = `${process.env.PUBLIC_URL}/characters`;
 export const weaponImagesUrl = `${process.env.PUBLIC_URL}/weapons`;
 export const accessoryImagesUrl = `${process.env.PUBLIC_URL}/accessories`;
 
-//create default as the first one
 //fill prepopulated items mark them as default
 export const characters = [
     {
@@ -69,6 +68,9 @@ export const characters = [
         'name': 'Cavallo',
         'url': `${characterImagesUrl}/Cavallo.png`
     },
+];
+
+export const secretCharacters = [
     {
         'name': 'Exdash',
         'url': `${characterImagesUrl}/Exdash.png`
@@ -86,7 +88,7 @@ export const characters = [
 export const defaultItem =     {
     'name': 'Default',
     'url': `${process.env.PUBLIC_URL}/Default.png`
-}
+};
 
 const weaponsDictionary = {
     1: {
