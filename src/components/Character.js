@@ -1,4 +1,4 @@
-import { Image, Modal, Container, Row, Col} from "react-bootstrap";
+import { Image, Modal, Container, Row, Col } from "react-bootstrap";
 import React, {useState} from "react";
 import '../styles/images.css';
 import { characters } from "../data/constants";
@@ -8,7 +8,6 @@ const Character = ({currentCharacter, setCharacter}) => {
     
     const numberOfCharacters = characters.length;
     const cols = [...Array(numberOfCharacters).keys()].filter(elem => elem % 4 === 0);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -28,7 +27,7 @@ const Character = ({currentCharacter, setCharacter}) => {
     }
 
     return (
-        <div>
+        <div className="d-flex justify-content-center">
             <Image src={currentCharacter.url} onClick={handleShow} className="current-character-image" alt="character"/>
             <Modal size='lg' show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

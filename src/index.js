@@ -1,7 +1,7 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.css';
 import BuildCard from './components/BuildCard';
 
 const container = document.getElementById('root');

@@ -3,6 +3,7 @@ import useLocalStorage from "use-local-storage";
 import { characters } from "../data/constants";
 import Character from "./Character";
 import '../styles/custom.css'
+import WeaponList from "./WeaponList";
 
 const BuildCard = () => {
     const [currentCharacter, setCurrentCharacter] = useLocalStorage("currentCharacter", characters[0]);
@@ -22,29 +23,24 @@ const BuildCard = () => {
     }
 
     const handleRandomize = () => {
-        //ignore selected option
-        //combinations only option
-        //hide secret characters
         const characterNumber = generateRandomNumber(1, characters.length);
         setCharacter(characters[characterNumber]);
     }
 
     return (
         <Container className="bc-container">
-            <Row>
-                <Col>
+            <Row className="m-5">
+                <Col className="justify-content-center">
                     <Character currentCharacter={currentCharacter} setCharacter={setCharacter}/>
                 </Col>
-                <Col>
-                    <Row>
-                        Weapons    
-                    </Row>
-                    <Row>
-                        Accessories
+                <Col className="p-0 justify-content-center">
+                    <WeaponList />
+                    <Row className='text-center justify=content-center'>
+                        <div>ACCESSORIES PLACEHOLDER</div>
                     </Row>
                 </Col>
             </Row>
-            <Row className='pt-5'>
+            <Row className='m-5'>
                 <Col className='text-center'>
                     <Button variant="vs" size='lg' onClick={handleRandomize}>Randomize</Button>
                 </Col>

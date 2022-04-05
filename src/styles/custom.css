@@ -6,13 +6,43 @@
 
 .btn-vs {
     background-color: #891216;
-    color: #ffc500;
+    color: var(--text-color);
 }
 
 .bc-container {
-    background-color: #140100;
-    border: 3px solid #595358;
+    background-color: var(--screen-color);
+    /* border: 3px solid #595358; */
     height: 70vh;
+}
+
+.vs-item:hover {
+    transition: background-color .5s;
+    background-color: #372726;
+}
+
+.modal-content {
+    background-color: var(--modal-color);
+}
+
+.modal-header {
+    background-color: #372726;
+    border-color: #493a3a;
+}
+
+.form-control.dark {
+    border: 1px solid var(--text-color);
+    background-color: var(--modal-color);
+    color: var(--text-color);
+}
+
+.form-control.dark:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem var(--text-color) / 25%;
+}
+
+.form-control.dark::placeholder {
+    color: var(--text-color);
+    opacity: 50%;
 }
 
 @media (min-width: 1600px) {
