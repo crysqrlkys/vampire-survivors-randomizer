@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Col, Row, Container, Form, Image, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentAccessories, setCurrentWeapons } from "../reducers";
+import { setAccessory, setWeapon } from "../reducers";
 
 const Item = ({itemId, itemsListName, items}) => {
     const [show, setShow] = useState(false);
@@ -9,7 +9,7 @@ const Item = ({itemId, itemsListName, items}) => {
 
     const isWeapon = itemId.startsWith('w');
     const currentItem = useSelector((state) => isWeapon ? state.app.currentWeapons[itemId] : state.app.currentAccessories[itemId]);
-    const setCurrentItem = isWeapon ? setCurrentWeapons : setCurrentAccessories;
+    const setCurrentItem = isWeapon ? setWeapon : setAccessory;
 
     const dispatch = useDispatch();
 

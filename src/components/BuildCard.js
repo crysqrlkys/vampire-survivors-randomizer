@@ -4,8 +4,8 @@ import '../styles/custom.css'
 import WeaponList from "./WeaponList";
 import AccessoryList from "./AccessoryList";
 import { useDispatch, useSelector } from "react-redux";
-import { clearBuildCard, setAllowSecrets, setAllWeapons, setCharacter, setCombinationsOnly, setHideSecrets } from "../reducers";
-import { generateRandomId } from "../utils";
+import { clearBuildCard, setAllowSecrets, setAllWeapons, setCharacter, setCombinationsOnly, setCurrentAccessories, setCurrentWeapons, setHideSecrets } from "../reducers";
+import { generateRandomId, generateObject, getObjLength } from "../utils";
 
 const BuildCard = () => {
     const dispatch = useDispatch();
@@ -20,19 +20,35 @@ const BuildCard = () => {
     const weapons = useSelector((state) => state.app.weaponPool);
     const accessories = useSelector((state) => state.app.accessoryPool);
 
-    const setCurrentCharacter = (character) => {
-        dispatch(setCharacter(character));
-    }
+    const setNewBuild = (newCharacter, newWeapons, newAccessories) => {
+        dispatch(setCharacter(newCharacter));
+        dispatch(setCurrentWeapons(newWeapons));
+        dispatch(setCurrentAccessories(newAccessories));
+    };
 
     const handleClear = () => {
         dispatch(clearBuildCard())
         sessionStorage.clear();
-    }
+    };
+
+    const getIds = (objList, length) => {
+        return Object.values(objList).map(el => el.id);
+    };
 
     const handleRandomize = () => {
-        // TODO: prevent from getting the same number and exclude defaults
-        const characterNumber = generateRandomId(currentCharacter.id, 1, characters.length);
-        setCurrentCharacter(characters[characterNumber]);
+        const charactersLength = getObjLength(characters);
+
+        const weaponsLength = getObjLength(weapons);
+        const weaponCurrentIds = getIds(currentWeapons);
+
+        const accessoriesLength = getObjLength(accessories);
+        const accessoriesCurrentIds = getIds(currentAccessories);
+
+        const newCharacterId = generateRandomId(currentCharacter.id, 1, charactersLength, 'c');
+        const newWeapons = generateObject(weaponCurrentIds, weapons, 1, weaponsLength, 'w');
+        const newAccessories = generateObject(accessoriesCurrentIds, accessories, 2, accessoriesLength, 'a');
+
+        setNewBuild(characters[newCharacterId], newWeapons, newAccessories);
     }
 
     const secretsChange = (e) => {

@@ -9,7 +9,8 @@ const Character = () => {
 
     const dispatch = useDispatch();
     const currentCharacter = useSelector((state)=> state.app.currentCharacter);
-    const characters = useSelector((state) => state.app.characterPool)
+    const characterPool = useSelector((state) => state.app.characterPool)
+    const characters = Object.values(characterPool);
     
     const numberOfCharacters = characters.length;
     const cols = [...Array(numberOfCharacters).keys()].filter(elem => elem % 4 === 0);
