@@ -6,10 +6,11 @@ Build randomizer for vampire survivors.
 ## TODO:
 ### Logic
 - [x] Character and character select.
-- [ ] Basic Randomize.
+- [x] Basic Randomize.
 - [x] Weapons.
 - [x] Accessories (possibly same component).
 - [ ] Preselected weapons for characters.
+- [ ] Lock items selection.
 - [ ] Validations.
 - [x] Settings (combinations, include secret characters).
 - [x] Default values.
@@ -27,11 +28,9 @@ Build randomizer for vampire survivors.
 - [ ] Deploy.
 ### To improve
 - [x] State store.
-- [ ] Complex random.
 - [ ] Share build (url params).
 - [ ] Better CSS.
 - [ ] Images (icons, background image).
-- [ ] Lock items selection.
 - [ ] README.
 
 ## Basic commands:

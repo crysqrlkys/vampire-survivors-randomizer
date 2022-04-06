@@ -20,8 +20,10 @@ const BuildCard = () => {
     const weapons = useSelector((state) => state.app.weaponPool);
     const accessories = useSelector((state) => state.app.accessoryPool);
 
-    const setCurrentCharacter = (character) => {
-        dispatch(setCharacter(character));
+    const setNewBuild = (newCharacter, newWeapons, newAccessories) => {
+        dispatch(setCharacter(newCharacter));
+        dispatch(setCurrentWeapons(newWeapons));
+        dispatch(setCurrentAccessories(newAccessories));
     };
 
     const handleClear = () => {
@@ -46,9 +48,7 @@ const BuildCard = () => {
         const newWeapons = generateObject(weaponCurrentIds, weapons, 1, weaponsLength, 'w');
         const newAccessories = generateObject(accessoriesCurrentIds, accessories, 2, accessoriesLength, 'a');
 
-        dispatch(setCurrentWeapons(newWeapons));
-        dispatch(setCurrentAccessories(newAccessories));
-        setCurrentCharacter(characters[newCharacterId]);
+        setNewBuild(characters[newCharacterId], newWeapons, newAccessories);
     }
 
     const secretsChange = (e) => {
