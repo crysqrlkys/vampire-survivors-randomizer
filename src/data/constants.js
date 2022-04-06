@@ -2,91 +2,113 @@ export const characterImagesUrl = `${process.env.PUBLIC_URL}/characters`;
 export const weaponImagesUrl = `${process.env.PUBLIC_URL}/weapons`;
 export const accessoryImagesUrl = `${process.env.PUBLIC_URL}/accessories`;
 
-//create default as the first one
 //fill prepopulated items mark them as default
 export const characters = [
     {
+        'id': 1,
         'name': 'Antonio',
         'url': `${characterImagesUrl}/Antonio.png`
     }, 
     {
+        'id': 2,
         'name': 'Imelda',
         'url': `${characterImagesUrl}/Imelda.png`
     },
     {
+        'id': 3,
         'name': 'Pasqualina',
         'url': `${characterImagesUrl}/Pasqualina.png`
     },
     {
+        'id': 4,
         'name': 'Gennaro',
         'url': `${characterImagesUrl}/Gennaro.png`
     },
     {
+        'id': 5,
         'name': 'Arca',
         'url': `${characterImagesUrl}/Arca.png`
     },
     {
+        'id': 6,
         'name': 'Porta',
         'url': `${characterImagesUrl}/Porta.png`
     },
     {
+        'id': 7,
         'name': 'Lama',
         'url': `${characterImagesUrl}/Lama.png`
     },
     {
+        'id': 8,
         'name': 'Poe',
         'url': `${characterImagesUrl}/Poe.png`
     },
     {
+        'id': 9,
         'name': 'Clerici',
         'url': `${characterImagesUrl}/Clerici.png`
     },
     {
+        'id': 10,
         'name': 'Dommario',
         'url': `${characterImagesUrl}/Dommario.png`
     },
     {
+        'id': 11,
         'name': 'Krochi',
         'url': `${characterImagesUrl}/Krochi.png`
     },
     {
+        'id': 12,
         'name': 'Christine',
         'url': `${characterImagesUrl}/Christine.png`
     },
     {
+        'id': 13,
         'name': 'Pugnala',
         'url': `${characterImagesUrl}/Pugnala.png`
     },
     {
+        'id': 14,
         'name': 'Poppea',
         'url': `${characterImagesUrl}/Poppea.png`
     },
     {
+        'id': 15,
         'name': 'Mortaccio',
         'url': `${characterImagesUrl}/Mortaccio.png`
     },
     {
+        'id': 16,
         'name': 'Cavallo',
         'url': `${characterImagesUrl}/Cavallo.png`
     },
+];
+
+export const secretCharacters = [
     {
+        'id': 17,
         'name': 'Exdash',
         'url': `${characterImagesUrl}/Exdash.png`
     },
     {
+        'id': 18,
         'name': 'Red Death',
         'url': `${characterImagesUrl}/RedDeath.png`
     },
     {
+        'id': 19,
         'name': 'missingN',
         'url': `${characterImagesUrl}/missingN.png`
     },
 ];
 
 export const defaultItem =     {
+    'id': 0,
     'name': 'Default',
     'url': `${process.env.PUBLIC_URL}/Default.png`
-}
+};
 
 const weaponsDictionary = {
     1: {
