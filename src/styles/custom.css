@@ -45,6 +45,33 @@
     opacity: 50%;
 }
 
+/* .form-check-input:checked[type=checkbox] {
+    background-image: url();
+} */
+
+.form-check-input {
+    height: 50px;
+    width: 50px;
+    background-color: #8b8b8b;
+    border-color: #8b8b8b;
+    border: 3px solid var(--text-color);
+}
+
+.form-check-label {
+    font-size: 24px;
+    padding: 0.7rem 0 0 0.6rem;
+}
+
+.form-check-input:checked {
+    background-color: #8b8b8b;
+    border-color: #8b8b8b;
+    border: 3px solid var(--text-color);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem var(--text-color);
+}
+
 @media (min-width: 1600px) {
     .container {
         max-width: 1600px;
