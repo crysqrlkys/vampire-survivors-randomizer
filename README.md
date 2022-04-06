@@ -28,6 +28,7 @@ Build randomizer for vampire survivors.
 ### To improve
 - [x] State store.
 - [ ] Complex random.
+- [ ] Share build (url params).
 - [ ] Better CSS.
 - [ ] Images (icons, background image).
 - [ ] Lock items selection.

@@ -1,116 +1,123 @@
 export const characterImagesUrl = `${process.env.PUBLIC_URL}/characters`;
 export const weaponImagesUrl = `${process.env.PUBLIC_URL}/weapons`;
 export const accessoryImagesUrl = `${process.env.PUBLIC_URL}/accessories`;
+//default url
+
 
 //fill prepopulated items mark them as default
-export const characters = [
-    {
+//id structure 'c-1' : {'id': 1, 'name': '', 'url': ''}
+export const characters = {
+    'c-0': {
+        'id': 0,
+        'name': 'Default',
+        'url': `${process.env.PUBLIC_URL}/Default.png`
+    },
+    'c-1': {
         'id': 1,
         'name': 'Antonio',
         'url': `${characterImagesUrl}/Antonio.png`
     }, 
-    {
+    'c-2': {
         'id': 2,
         'name': 'Imelda',
         'url': `${characterImagesUrl}/Imelda.png`
     },
-    {
+    'c-3': {
         'id': 3,
         'name': 'Pasqualina',
         'url': `${characterImagesUrl}/Pasqualina.png`
     },
-    {
+    'c-4': {
         'id': 4,
         'name': 'Gennaro',
         'url': `${characterImagesUrl}/Gennaro.png`
     },
-    {
+    'c-5': {
         'id': 5,
         'name': 'Arca',
         'url': `${characterImagesUrl}/Arca.png`
     },
-    {
+    'c-6': {
         'id': 6,
         'name': 'Porta',
         'url': `${characterImagesUrl}/Porta.png`
     },
-    {
+    'c-7': {
         'id': 7,
         'name': 'Lama',
         'url': `${characterImagesUrl}/Lama.png`
     },
-    {
+    'c-8': {
         'id': 8,
         'name': 'Poe',
         'url': `${characterImagesUrl}/Poe.png`
     },
-    {
+    'c-9': {
         'id': 9,
         'name': 'Clerici',
         'url': `${characterImagesUrl}/Clerici.png`
     },
-    {
+    'c-10': {
         'id': 10,
         'name': 'Dommario',
         'url': `${characterImagesUrl}/Dommario.png`
     },
-    {
+    'c-11': {
         'id': 11,
         'name': 'Krochi',
         'url': `${characterImagesUrl}/Krochi.png`
     },
-    {
+    'c-12': {
         'id': 12,
         'name': 'Christine',
         'url': `${characterImagesUrl}/Christine.png`
     },
-    {
+    'c-13': {
         'id': 13,
         'name': 'Pugnala',
         'url': `${characterImagesUrl}/Pugnala.png`
     },
-    {
+    'c-14': {
         'id': 14,
         'name': 'Poppea',
         'url': `${characterImagesUrl}/Poppea.png`
     },
-    {
+    'c-15': {
         'id': 15,
         'name': 'Mortaccio',
         'url': `${characterImagesUrl}/Mortaccio.png`
     },
-    {
+    'c-16': {
         'id': 16,
         'name': 'Cavallo',
         'url': `${characterImagesUrl}/Cavallo.png`
     },
-];
+};
 
-export const secretCharacters = [
-    {
+export const secretCharacters = {
+    'c-17': {
         'id': 17,
         'name': 'Exdash',
         'url': `${characterImagesUrl}/Exdash.png`
     },
-    {
+    'c-18': {
         'id': 18,
         'name': 'Red Death',
         'url': `${characterImagesUrl}/RedDeath.png`
     },
-    {
+    'c-19': {
         'id': 19,
         'name': 'missingN',
         'url': `${characterImagesUrl}/missingN.png`
     },
-];
-
-export const defaultItem =     {
-    'id': 0,
-    'name': 'Default',
-    'url': `${process.env.PUBLIC_URL}/Default.png`
 };
 
 const weaponsDictionary = {
+    0: {
+        'id': 0,
+        'name': 'Default',
+        'url': `${process.env.PUBLIC_URL}/Default.png`
+    },
     1: {
         'name': 'Whip',
         'url': `${weaponImagesUrl}/Whip.png`,
@@ -315,6 +322,11 @@ const unionsDictionary = {
 export const unions = Object.values(unionsDictionary);
 
 const accessoriesDictionary = {
+    0: {
+        'id': 0,
+        'name': 'Default',
+        'url': `${process.env.PUBLIC_URL}/Default.png`
+    },
     1: {
         'name': 'Spinach',
         'url': `${accessoryImagesUrl}/Spinach.png`,

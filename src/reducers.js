@@ -1,16 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { accessories, characters, secretCharacters, defaultItem, evolutions, unions, weapons } from './data/constants'
-
-const createIdDictionary = (prefix, size) => {
-  return Object.fromEntries([...Array(size)].map((_, i) => [`${prefix}-${i}`, defaultItem]));
-};
+import { accessories, characters, secretCharacters, evolutions, unions, weapons } from './data/constants'
+import { createEmptyIdDictionary } from './utils';
 
 export const appSlice = createSlice({
   name: 'App',
   initialState: {
-    currentCharacter: defaultItem,
-    currentWeapons: createIdDictionary('w', 6),
-    currentAccessories: createIdDictionary('a', 6),
+    currentCharacter: characters['c-0'],
+    currentWeapons: createEmptyIdDictionary(weapons[0], 6, 'w'),
+    currentAccessories: createEmptyIdDictionary(accessories[0], 6, 'a'),
     characterPool: characters,
     weaponPool: [...weapons, ...evolutions, ...unions],
     accessoryPool: accessories,
@@ -24,14 +21,27 @@ export const appSlice = createSlice({
       state.currentCharacter = action.payload;
     },
     setCurrentWeapons: (state, action) => {
+      const newWeapons = action.payload;
+      state.currentWeapons = {
+          ...state.currentWeapons,
+          ...newWeapons
+      }
+    },
+    setCurrentAccessories: (state, action) => {
+      const newAccessories = action.payload;
+      state.currentAccessories = {
+          ...state.currentAccessories,
+          ...newAccessories
+      }
+    },
+    setWeapon: (state, action) => {
       const {id, value} = action.payload;
-      console.log(action);
       state.currentWeapons = {
           ...state.currentWeapons,
           [id]: value
       }
     },
-    setCurrentAccessories: (state, action) => {
+    setAccessory: (state, action) => {
       const {id, value} = action.payload;
       state.currentAccessories = {
           ...state.currentAccessories,
@@ -39,9 +49,9 @@ export const appSlice = createSlice({
       }
     },
     clearBuildCard: (state) => {
-      state.currentCharacter = defaultItem;
-      state.currentWeapons = createIdDictionary('w', 6);
-      state.currentAccessories = createIdDictionary('a', 6);
+      state.currentCharacter = characters['c-0'];
+      state.currentWeapons = createEmptyIdDictionary(weapons[0], 6, 'w');
+      state.currentAccessories = createEmptyIdDictionary(accessories[0], 6, 'a');
     },
     setCombinationsOnly: (state) => {
       state.settings.combinationsOnly = true;
@@ -53,11 +63,11 @@ export const appSlice = createSlice({
     },
     setHideSecrets: (state) => {
       state.settings.secrets = false;
-      state.characterPool = [...characters];
+      state.characterPool = characters;
     },
     setAllowSecrets: (state) => {
       state.settings.secrets = true;
-      state.characterPool = [...characters, ...secretCharacters];
+      state.characterPool = {...characters, ...secretCharacters};
     },
   }
 })
@@ -66,6 +76,8 @@ export const {
   setCharacter,
   setCurrentWeapons,
   setCurrentAccessories,
+  setWeapon,
+  setAccessory,
   clearBuildCard,
   setCombinationsOnly,
   setAllWeapons,
