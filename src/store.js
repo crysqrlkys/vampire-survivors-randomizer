@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import app from './reducers';
-import { loadState, saveState } from './sessionStorage';
+import { loadState, saveState } from './utils/sessionStorage';
 
 const preloadedState = loadState();
 

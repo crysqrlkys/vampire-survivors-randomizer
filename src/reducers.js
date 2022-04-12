@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { accessories, characters, secretCharacters, evolutions, unions, weapons } from './data/constants'
-import { createEmptyIdDictionary } from './utils';
+import { createEmptyIdDictionary } from './utils/utils';
 
 export const appSlice = createSlice({
   name: 'App',
@@ -19,6 +19,9 @@ export const appSlice = createSlice({
   reducers: {
     setCharacter: (state, action) => {
       state.currentCharacter = action.payload;
+      state.currentCharacter.weapon.forEach((el, index) => {
+        state.currentWeapons[`w-${index}`] = el;
+      })
     },
     setCurrentWeapons: (state, action) => {
       const newWeapons = action.payload;
